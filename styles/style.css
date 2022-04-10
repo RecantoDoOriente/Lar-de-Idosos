@@ -561,7 +561,7 @@ div.links.active {
 
     opacity: 1;
     overflow: visible;
-    height: 8rem;
+    height: 5rem;
 
     display: flex;
     flex-direction: column;
@@ -580,6 +580,13 @@ div.links a img.iconA {
     width: 35px;
 
     border-radius: 100%;
+}
+
+div.links a:first-child {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    display: none;
 }
 
 footer {
@@ -753,6 +760,19 @@ footer a {
 
     footer a {
         width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    div.links.active {
+        height: 8rem;
+    }
+    
+    div.links a:first-child {
+        opacity: 1;
+        width: 35px;
+        overflow: visible;
+        display: flex;
     }
 }
 
