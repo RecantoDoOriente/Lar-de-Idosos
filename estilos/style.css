@@ -19,8 +19,8 @@ body{
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    
 }
 
 .sr-only {
@@ -42,7 +42,7 @@ body{
 }
 
 ::-webkit-scrollbar{
-    width: .7rem;
+    width: .5rem;
     height: .5rem;
 
 }
@@ -100,7 +100,7 @@ header div.content {
     flex-wrap: wrap;
     gap: .7rem;
 
-    margin-top: 4rem;
+    margin-top: 2rem;
 
 }
 
@@ -143,7 +143,7 @@ header nav a.btn {
     font-size: 1rem;
     font-weight: bold;
 
-    color: black;
+    color: white;
     text-align: center;
 
     background-color: #04d361;
@@ -152,7 +152,8 @@ header nav a.btn {
 
     width: 10rem;
 
-    padding: .4rem;
+    padding: .5rem 0;
+    letter-spacing: 3px;
     
 }
 a.btn:hover {
@@ -167,7 +168,7 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    gap: 2rem;
+    gap: .5rem;
 }
 
 main section {
@@ -184,6 +185,11 @@ main section.inicio {
     margin-top: 4rem;
 
     padding: .4rem 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 main section.inicio p {
@@ -213,6 +219,17 @@ main section.inicio div.ola img {
     width: 1.8rem;
 }
 
+main section.inicio a {
+    margin: 2rem 0 1rem;
+
+    background-color: #ff4f4f;
+    color: #fff;
+
+    padding: .7rem 1rem;
+
+    border-radius: 1rem;
+}
+
 main h2.h2Sections {
     margin-top: 5rem;
     margin-bottom: 3rem;
@@ -233,11 +250,6 @@ main h2.h2Sections {
 
 main h2:first-child {
     max-width: 45rem;
-}
-
-main section.conteudoAulas,
-main section.praQuem {
-    margin-bottom: 5rem;
 }
 
 main section.praQuem div.quem {
@@ -267,12 +279,14 @@ main section.conteudoAulas div.todasMaterias {
     flex-direction: column;
     justify-content: space-around;
     gap: 2rem;
+
 }
 
 main section.conteudoAulas div.materia div.div {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
 
     padding: 0 .8rem;
@@ -331,6 +345,7 @@ main section.conteudoAulas div.materia {
     border: 1px solid black;
     border-radius: 1rem 1rem 0 0;
 
+
 }
 
 
@@ -374,7 +389,6 @@ main section.conteudoAulas div.materia div.conteudo div.cont {
     flex-direction: column;
 
     width: 30%;
-    min-width: 210px;
 
 
     padding: 1rem 40px;
@@ -405,10 +419,6 @@ main section.quemSouEu div div.eu {
     background-color: #fff;
 
     border-radius: 0 1rem 1rem 1rem;
-}
-
-main section.quemSouEu div div.eu div.sobreMim {
-    min-width: 250px;
 }
 
 main section.quemSouEu div div.aprovacoes {
@@ -470,9 +480,27 @@ main section.quemSouEu div.infos {
     height: 23rem;
 }
 
+main section.agendeUmaVisita div.i p {
+    text-align: center;
+
+    font-size: 18px;
+
+    font-family: 'Open Sans', sans-serif;
+
+    width: 55%;
+
+    margin: 0 auto 1.5rem;
+}
+
+main section.agendeUmaVisita div.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
 main section.agendeUmaVisita div.form form {
     width: min(95%, 30rem);
-    min-width: 250px;
     overflow: auto;
 
     margin: auto;
@@ -526,12 +554,62 @@ main section.agendeUmaVisita div.form form div.info div {
 
 }
 
+div.links.active {
+    position: fixed;
+    left: 15px;
+    bottom: 10px;
+
+    opacity: 1;
+    overflow: visible;
+    height: 8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+div.links {
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    transition: all 2s;
+
+}
+
+div.links a img.iconA {
+    width: 35px;
+
+    border-radius: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    margin-top: 5rem;
+
+    background-color: blue;
+
+    width: 100%;
+    padding: 5rem;
+
+}
+
+footer a {
+    text-align: center;
+    width: 60%;
+
+    color: #fff;
+    font-size: 20px;
+}
+
 @media (max-width: 1200px) {
 
     main section.conteudoAulas div.materia div.conteudo div.cont {
         width: 45%;
-        min-width: 300px;
-
     }
 
     main section.conteudoAulas div.materia div.conteudo div.cont:nth-child(3n-1) {
@@ -555,6 +633,11 @@ main section.agendeUmaVisita div.form form div.info div {
         opacity: 0;
         overflow: hidden;
         display: none;
+    }
+
+    header div.content div#img img{
+        width: 15rem;
+        height: 13rem;
     }
 
     header div.menuInt.active nav.small{
@@ -637,8 +720,8 @@ main section.agendeUmaVisita div.form form div.info div {
     }
 
     main section.conteudoAulas div.materia div.conteudo div.cont {
-        width: 90%;
-
+        padding: 1rem .2rem;
+        width: 100%;
     }
 
     main section.conteudoAulas div.materia div.conteudo div.cont:nth-child(3n-1) {
@@ -655,5 +738,29 @@ main section.agendeUmaVisita div.form form div.info div {
 
     header div.content div.texts {
         text-align: center;
+    }
+
+    div.i p#msm {
+        width: 100%;
+        padding: 1rem .3rem;
+    }
+
+    footer{
+        padding: 1rem .4rem;
+
+        bottom: 0;
+    }
+
+    footer a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 410px) {
+    div.div {
+        flex-direction: column;
+    }
+    div.divIcon {
+        margin-bottom: 1.2rem;
     }
 }
