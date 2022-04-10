@@ -1,786 +1,416 @@
-* {
-    box-sizing: border-box;
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    outline: none;
+    <link rel="stylesheet" href="styles/style.css">
 
-    word-wrap: break-word;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-body{
-    background-color: #f7f8fa;
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 
-    margin: 0;
-    padding: 0;
-    border: 0;
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    /*font-family: 'Open Sans', sans-serif;*/
-    font-family: 'Roboto', sans-serif;
-    font-size: 93.75%;
+    <link rel="shortcut icon" href="images/solzinho.png" type="image/x-icon">
+    <title>Recanto do Oriente</title>
+</head>
+<body>
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    <header>
+
+            <nav class="big">
+
+                <a href="#ClaudioFerro">Sobre nós</a>
+
+                <a href="#ParaQuem">Para quem?</a>
+
+                <a href="#Conteudo">Atividades</a>
     
-}
-
-.sr-only {
-    position: absolute;
-
-    width: 1px;
-    height: 1px;
-    padding: 0;
-
-    margin: -1px;
-
-    overflow: hidden;
-
-    clip: rect(0, 0, 0, 0);
-
-    white-space: nowrap;
-
-    border-width: 0;
-}
-
-::-webkit-scrollbar{
-    width: .5rem;
-    height: .5rem;
-
-}
-
-::-webkit-scrollbar-track {
-    background-color: #323238;
-    height: 1rem;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: #04d361;
-
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: #04d3618b;
-}
-
-a {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-
-    letter-spacing: .1rem;
-
-    text-decoration: none;
-
-    color: #323238;
-}
-a:hover {
-    opacity: .6;
-}
-
-span.corRed {
-    color: #ff4f4f;
-}
-
-header {
-    background-color: #fff;
+                <a href="#form" class="btn">Contato</a>
     
+            </nav>
 
-    border-bottom: 1px solid #ddd;
+            <div class="menuInt">
 
-    width: 100%;
-
-    padding: 1rem;
-}
-
-header div.content {
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: .7rem;
-
-    margin-top: 2rem;
-
-}
-
-header div.content div#img img{
-    width: 10rem;
-    height: 8rem;
-}
-
-header div.texts h1 {
-    font-size: 20px;
-}
-
-header div.texts h2 {
-    font-size: 18px;
-}
-
-header nav.big,
-header nav.small {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
-
-header nav.big {
-    width: 50%;
-    min-width: 800px;
-
-    position: absolute;
-    top: 0;
-    right: 3rem;
-
-    padding: .6rem;
-
-}
-
-header nav a.btn {
-
-    font-size: 1rem;
-    font-weight: bold;
-
-    color: white;
-    text-align: center;
-
-    background-color: #04d361;
-
-    border-radius: .5rem;
-
-    width: 10rem;
-
-    padding: .5rem 0;
-    letter-spacing: 3px;
+                <div class="menu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
     
-}
-a.btn:hover {
-    transform: translateY(-4px);
-}
-
-main {
-
-    width: 90%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: .5rem;
-}
-
-main section {
-    width: 100%;
-
-    padding: .7rem;
-
-    border-radius: 2rem;
-}
-
-main section.inicio {
-    border: 2px dashed #04d361;
-
-    margin-top: 4rem;
-
-    padding: .4rem 1.4rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-main section.inicio p {
-    text-align: center;
-
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-
-    letter-spacing: .1rem;
-    word-spacing: .2rem;
-    line-height: 2.2rem;
-}
-
-main section.inicio div.ola {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5rem;
-
-    color: #ff4f4f;
-
-    font-size: .7rem;
-}
-
-main section.inicio div.ola img {
-    width: 1.8rem;
-}
-
-main section.inicio a {
-    margin: 2rem 0 1rem;
-
-    background-color: #ff4f4f;
-    color: #fff;
-
-    padding: .7rem 1rem;
-
-    border-radius: 1rem;
-}
-
-main h2.h2Sections {
-    margin-top: 5rem;
-    margin-bottom: 3rem;
-
-    font-size: 1.3rem;
-
-    max-width: 20rem;
-
-    line-height: 20px;
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    text-align: start;
-
-    color: #0e1c34;
-}
-
-main h2:first-child {
-    max-width: 45rem;
-}
-
-main section.praQuem div.quem {
-    width: 100%;
-
-    padding: 1.5rem;
-
-    background-color: #fff;
-
-    border-radius: 0 1rem 1rem 1rem;
-}
-
-main section.praQuem div.quem p {
-    font-size: 1.2rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: bold;
-}
-
-main section.praQuem div.quem li {
-    margin-top: 1rem;
-    font-family: 'Open Sans', sans-serif;
-
-}
-
-main section.conteudoAulas div.todasMaterias {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 2rem;
-
-}
-
-main section.conteudoAulas div.materia div.div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-
-
-    padding: 0 .8rem;
-
-}
-
-main section.conteudoAulas div.materia div.div div.nameQui {
-    display: flex;
-    align-items: center;
-    gap: 0.5;
-
-
-    padding: 0 .8rem;
-
-}
-
-main section.conteudoAulas div.materia div.div div.divIcon {
-    cursor: pointer;
-
-    border-radius: 1rem;
-
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-
-    padding: .8rem 1.2rem;
-
-}
-
-main section.conteudoAulas div.materia.active div.div div.divIcon > i.fa-plus,
-main section.conteudoAulas div.materia div.div div.divIcon > i.fa-minus,
-main section.conteudoAulas div.materia div.conteudo,
-header nav.small,
-header div.menu{
-    opacity: 0;
-
-    overflow: hidden;
-    display: none;
-}
-
-main section.conteudoAulas div.materia.active div.div div.divIcon > i.fa-minus,
-main section.conteudoAulas div.materia div.div div.divIcon > i.fa-plus,
-main section.conteudoAulas div.materia.active div.conteudo {
-    opacity: 1;
-
-    overflow: visible auto;
-
-    display: inline-block;
-}
-
-main section.conteudoAulas div.materia div.div div.divIcon i {
-    font-size: 1.5rem;
-}
-
-main section.conteudoAulas div.materia {
-    background-color: #fff;
-
-    border: 1px solid black;
-    border-radius: 1rem 1rem 0 0;
-
-
-}
-
-
-main section.conteudoAulas div.materia p {
-    font-size: 1.5rem;
-}
-
-main section.conteudoAulas div.materia.active div.conteudo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-
-    border-top: 1px dashed #323238;
-
-    padding: .8rem;
-
-    overflow: hidden;
-}
-
-main section.conteudoAulas div.materia div.conteudo img {
-    width: 2.5rem;
-}
-
-main section.conteudoAulas div.materia div.conteudo p{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-
-    line-height: 30px;
-
-    color: rgb(27, 27, 27);
-
-    text-align: justify;
-}
-
-main section.conteudoAulas div.materia div.conteudo div.cont {
-    display: flex;
-    flex-direction: column;
-
-    width: 30%;
-
-
-    padding: 1rem 40px;
-
-}
-
-main section.conteudoAulas div.materia div.conteudo div.cont:nth-child(3n-1) {
-    border-left: 1px dashed #ff4f4f;
-    border-right: 1px dashed #ff4f4f;
-}
-
-main section.quemSouEu div.sobre {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-main section.quemSouEu div div.eu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.3rem;
-    align-items: center;
+                <nav class="small">
+            
+                    <a onclick="aparecerSumir('div.menuInt')" href="#ClaudioFerro">Sobre nós</a>
+
+                    <a onclick="aparecerSumir('div.menuInt')" href="#ParaQuem">Para quem?</a>
     
-    width: 100%;
+                    <a onclick="aparecerSumir('div.menuInt')" href="#Conteudo">Atividades</a>
+    
+                    <a onclick="aparecerSumir('div.menuInt')" href="#form" class="btn">Contato</a>
+    
+                </nav>
 
-    padding: 1.5rem;
+            </div>
 
-    background-color: #fff;
+        <div class="content">
 
-    border-radius: 0 1rem 1rem 1rem;
-}
+            <div id="img">
 
-main section.quemSouEu div div.aprovacoes {
-    padding: 1rem .3rem;
-}
+                <img src="images/logono pronta.png" alt="Logo Recanto do Oriente">
+    
+            </div>
+    
+            <div class="texts">
+    
+                <h1>Bem-vindo à página do Recanto do Oriente.</h1>
+                <h2>O melhor lar de idosos.</h2>
+    
+            </div>
 
-main section.quemSouEu div div.aprovacoes ul {
-    border: 2px dashed #04d361;
+        </div>
 
-    padding: 1.4rem;
-}
 
-main section.quemSouEu div div.aprovacoes li {
-    font-size: .8rem;
+    </header>
 
-    line-height: 1.5rem;
-}
+    <main>
 
-main section.quemSouEu div.texts {
-    padding: 0 1.8rem;
+        <section class="inicio">
 
-    border: 2px dashed #ff4f4f;
-}
+            <div class="ola">
+                <img src="images/emoji.svg" alt="">
+                <h3>Olá, seja Bem-vindo!</h3>
+            </div>
 
-main section.quemSouEu div.sobre h2 {
-    font-size: 1.3rem;
-    font-weight: bold;
+            <p>Prazer! Seja bem-vindo ao site do Recanto do Oriente, o melhor lar para a terceira idade. Aqui os idosos são nossas prioridades, onde cada um recebe um tratamento especial com muito carinho.</p>
 
-    text-transform: uppercase;
+            <a href="#msm" class="btn">Nos envie uma Mensagem</a>
 
-    letter-spacing: .1rem;
-    word-spacing: .1rem;
-}
+        </section>
 
-main section.quemSouEu div.texts p {
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Open Sans', sans-serif;
+        <section class="quemSouEu">
 
-    text-align: justify;
+            <h2 class="h2Sections" id="ClaudioFerro">Sobre nós:</h2>
 
-    line-height: 30px;
-}
+            <div class="sobre">
 
-main section.quemSouEu div.sobre img {
-    height: 200px;
-}
+                <div class="eu">
 
-main section.quemSouEu div.infos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.2rem;
 
-    padding: 1rem;
+                    <div class="sobreMim">
 
-    width: 100%;
-    height: 23rem;
-}
+                        <div class="texts">
 
-main section.agendeUmaVisita div.i p {
-    text-align: center;
+                            <h2>Rápida Bibliografia.</h2>
+                            <p>Somos uma casa de idosos com o objetivo de ajudar as pessoas a aproveitarem o melhor, com muito amor, carinho e muita dedicação. Aqui todos recebem o mesmo respeito, sem qualquer forma de descriminação. Todos aqui fazem atividades interlectuais, pegam sol diariamente, além de fazerem seis refeições ao dia, junto com várias horas de sono.</p>
+            
+                        </div>
 
-    font-size: 18px;
+                    </div>
 
-    font-family: 'Open Sans', sans-serif;
+                    <div class="infos">
 
-    width: 55%;
+                        <iframe width="115%" height="100%" src="https://www.youtube.com/embed/rONwpyxw6rI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-    margin: 0 auto 1.5rem;
-}
 
-main section.agendeUmaVisita div.form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-}
-
-main section.agendeUmaVisita div.form form {
-    width: min(95%, 30rem);
-    overflow: auto;
-
-    margin: auto;
-}
-
-main section.agendeUmaVisita div.form form input {
-    padding: .5rem .8rem;
-
-    border-radius: .2rem;
-    border: 1px solid #ff4f4f;
-
-    background-color: transparent;
-
-    font-size: 1rem;
-}
-
-main section.agendeUmaVisita div.form form textarea {
-    resize: none;
-    padding: .5rem 1rem;
-    font-size: 1rem;
-
-    border-radius: 0 .5rem .5rem .5rem;
-}
-
-main section.agendeUmaVisita div.form form input#inptSub {
-    border: none;
-    background-color: blueviolet;
-
-    font-weight: bold;
-    color: #fff;
-
-    width: 100%;
-
-    margin-top: 1rem;
-
-    padding: .8rem;
-}
-
-main section.agendeUmaVisita div.form form div.info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-
-    width: 100%;
-}
-
-main section.agendeUmaVisita div.form form div.info div {
-    display: flex;
-    flex-direction: column;
-    gap: .7rem;
-
-}
-
-div.links.active {
-    position: fixed;
-    left: 15px;
-    bottom: 10px;
-
-    opacity: 1;
-    overflow: visible;
-    height: 5rem;
-
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-div.links {
-    opacity: 0;
-    overflow: hidden;
-    height: 0;
-    transition: all 2s;
-
-}
-
-div.links a img.iconA {
-    width: 35px;
-
-    border-radius: 100%;
-}
-
-div.links a:first-child {
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
-    display: none;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-
-    margin-top: 5rem;
-
-    background-color: blue;
-
-    width: 100%;
-    padding: 5rem;
-
-}
-
-footer a {
-    text-align: center;
-    width: 60%;
-
-    color: #fff;
-    font-size: 20px;
-}
-
-@media (max-width: 1200px) {
-
-    main section.conteudoAulas div.materia div.conteudo div.cont {
-        width: 45%;
-    }
-
-    main section.conteudoAulas div.materia div.conteudo div.cont:nth-child(3n-1) {
-        border: none;
+                    </div>
         
+                </div>
 
-    }
-}
+            </div>
 
-@media (max-width: 1100px) {
+        </section>
 
-    main section.quemSouEu div div.eu {
-        display: flex;
-        flex-direction: column;
-    }
+        <section class="praQuem">
 
-}
+            <h2 class="h2Sections" id="ParaQuem">Para quem?</h2>
 
-@media (max-width: 900px) {
-    nav.big {
-        opacity: 0;
-        overflow: hidden;
-        display: none;
-    }
+            <div class="quem">
+                <p>
+                    Para:
+                </p>
 
-    header div.content div#img img{
-        width: 15rem;
-        height: 13rem;
-    }
+                <ol>
+                    <li>Todos os sexos</li>
+                    <li>Todos os gêneros</li>
+                    <li>Todas as raças</li>
+                    <li>Todos acima de 55 anos</li>
+                    <li>Para você que quer ter menas preocupações e mais paz e lazer</li>
+                </ol>
+            </div>
 
-    header div.menuInt.active nav.small{
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        z-index: 10;
+        </section>
 
-        opacity: 1;
-        overflow: visible;
-        display: inline-flex;
+        <section class="conteudoAulas">
 
-        flex-direction: column;
-    }
+            <h2 class="h2Sections" id="Conteudo">Atividades:</h2>
 
-    header div.menu {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        z-index: 10;
+            <div class="todasMaterias">
 
-        opacity: 1;
-        overflow: visible;
-        display: inline-flex;
+                <div class="materia quimica">
 
-        flex-direction: column;
-
-        cursor: pointer;
-    }
-
-    header div.menuInt.active div.menu {
-        position: fixed;
-        top: 1.5rem;
-    }
-
-    header div.menuInt.active nav.small {
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 9;
-
-        height: 100vh;
-        width: 100vw;
-
-        background-color: #ff4f4f;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-    }
-
-    header div.menuInt.active div.menu div:first-child {
-        transform: rotate(-45deg);
-    }
-
-    header div.menuInt.active div.menu div:nth-child(2){
-        opacity: 0;
-    }
-
-    header div.menuInt.active div.menu div:nth-child(3) {
-        position: absolute;
-        top: 0;
-        transform: rotate(-135deg);
-    }
-
-    header div.menu div {
-        width: 35px;
-        height: 5px;
-        background-color: black;
-
-        margin: 2px;
-    }
-
-}
-
-@media (max-width: 760px) {
-    main section.conteudoAulas div.materia.active div.conteudo {
-        flex-direction: column;
-    }
-
-    main section.conteudoAulas div.materia div.conteudo div.cont {
-        padding: 1rem .2rem;
-        width: 100%;
-    }
-
-    main section.conteudoAulas div.materia div.conteudo div.cont:nth-child(3n-1) {
-        border: none;
-    }
-
-}
-
-@media (max-width: 670px) {
-    header div.content {
-        justify-content: center;
-        align-items: center;
-    }
-
-    header div.content div.texts {
-        text-align: center;
-    }
-
-    div.i p#msm {
-        width: 100%;
-        padding: 1rem .3rem;
-    }
-
-    footer{
-        padding: 1rem .4rem;
-
-        bottom: 0;
-    }
-
-    footer a {
-        width: 100%;
-    }
-}
-
-@media (max-width: 450px) {
-    div.links.active {
-        height: 8rem;
-    }
+                    <div class="div">
     
-    div.links a:first-child {
-        opacity: 1;
-        width: 35px;
-        overflow: visible;
-        display: flex;
-    }
-}
+                        <div class="nameQui">
+    
+                            <p>Fisioterapia</p>
+    
+                        </div>
+    
+                        <div class="divIcon">
+    
+                            <i class="fa fa-plus quimica" aria-hidden="true" onclick="aparecerSumir('div.materia.', 'quimica')"></i>
+                            <i class="fa fa-minus quimica" onclick="aparecerSumir('div.materia.','quimica')"></i>
+    
+                        </div>
+    
+                    </div>
+    
+                    <div class="conteudo">
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Fisioterapia</h2>
+        
+                            </div>
+        
+                            <p>A fisioterapia cerebro ajudando tanto em problemas mentais quanto na felicidade do idoso no cotidiano ajudanto tambem no introzamento.</p>
+    
+                        </div>
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Fisioterapia</h2>
+        
+                            </div>
+        
+                            <p>A fisioterapia cerebro ajudando tanto em problemas mentais quanto na felicidade do idoso no cotidiano ajudanto tambem no introzamento.</p>
+    
+                        </div>
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Fisioterapia</h2>
+        
+                            </div>
+        
+                            <p>A fisioterapia cerebro ajudando tanto em problemas mentais quanto na felicidade do idoso no cotidiano ajudanto tambem no introzamento.</p>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <div class="materia fisica">
+    
+                    <div class="div">
+    
+                        <div class="nameQui">
+    
+                            <p>Jogos para o cerébro</p>
+    
+                        </div>
+    
+                        <div class="divIcon">
+    
+                            <i class="fa fa-plus fisica" aria-hidden="true" onclick="aparecerSumir('div.materia.', 'fisica')"></i>
+                            <i class="fa fa-minus fisica" onclick="aparecerSumir('div.materia.', 'fisica')"></i>
+    
+                        </div>
+    
+                    </div>
+    
+                    <div class="conteudo">
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Dominó</h2>
+        
+                            </div>
+        
+                            <p>O dominó é um jogo exelente para o cerebro ajudando tanto em problemas mentais quanto na felicidade do idoso no cotidiano ajudanto tambem no introzamento.</p>
+                                
+                        </div>
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>UNO</h2>
+        
+                            </div>
+        
+                            <p>O UNO é um jogo exelente para o cerebro ajudando tanto em problemas mentais quanto na felicidade do idoso no cotidiano ajudanto tambem no introzamento.</p>
+    
+                        </div>
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Outros</h2>
+        
+                            </div>
+        
+                            <p>Outro jogos que ajudam no cerebro ajudando tanto em problemas mentais quanto na felicidade do idoso no cotidiano ajudanto tambem no introzamento.<</p>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
 
-@media (max-width: 410px) {
-    div.div {
-        flex-direction: column;
-    }
-    div.divIcon {
-        margin-bottom: 1.2rem;
-    }
-}
+                <div class="materia mais">
+    
+                    <div class="div">
+    
+                        <div class="nameQui">
+
+                            <p>E muito +</p>
+    
+                        </div>
+    
+                        <div class="divIcon">
+    
+                            <i class="fa fa-plus fisica" aria-hidden="true" onclick="aparecerSumir('div.materia.', 'mais')"></i>
+                            <i class="fa fa-minus fisica" onclick="aparecerSumir('div.materia.', 'mais')"></i>
+    
+                        </div>
+    
+                    </div>
+    
+                    <div class="conteudo">
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Alongamentos</h2>
+        
+                            </div>
+        
+                            <p>Exercicios que alongam o corpo fazendo bem para o corpo, sendo exercicios faceis e otimos para o corpo e para a saude, alem de fazer bem ao cerebro</p>
+    
+                        </div>
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Meditação</h2>
+        
+                            </div>
+        
+                            <p>Meditação ajuda ao corpo, ao cerebro e à vida no cotidiano deixando o idoso mais calmo e feliz. Ajudando assim no introsamento dele e em tudo mais.</p>
+    
+                        </div>
+    
+                        <div class="cont">
+    
+                            <div class="header">
+    
+                                <img src="https://image.freepik.com/vetores-gratis/contorno-colorido-de-quimica-organica-redonda-icon-ilustracao_104589-584.jpg" alt="">
+                                <h2>Festas comemorativas</h2>
+        
+                            </div>
+        
+                            <p>Fazemos festas em datas comemorativas, tanto em aniversarios quanto em datas especiais, fazendo assim, bolo de aniversario, totalmente saudevel, comida especial e muito mais.</p>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section class="agendeUmaVisita">
+
+            <h2 class="h2Sections" id="form">Contato:</h2>
+
+            <div class="cnts">
+
+                <div class="form">
+
+                    <div class="i">
+                        <p id="msm">
+                            Se você precisa de algum desses serviços, entre em contato pelo numero <a href="https://api.whatsapp.com/send?phone=5522992422692&text=Oi%2C%20estou%20interessado(a)%20em%20uma%20vaga%20na%20casa%20de%20idosos." target="_blank">(22) 99242-2692</a> (Telefone e Whatsapp). Ou nos envie uma mesnsagem, para que posamos entrar em contato com você:
+                        </p>
+                    </div>
+    
+                    <form action="https://formsubmit.co/recantodooriente@gmail.com" method="POST">
+    
+                        <div class="info">
+    
+                            <div>
+                                <input type="text" name="name" placeholder="Nome e Sobrenome" required>
+    
+                                <input type="email" name="email" placeholder="Seu email" required>
+    
+                            </div>
+    
+                            <textarea name="message" id="" cols="30" rows="7" placeholder="Nos conte um pouco mais" required></textarea>
+    
+                        </div>
+    
+                        <input type="submit" name="" id="inptSub">
+    
+                    </form>
+    
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <div class="links active">
+
+        <a href="tell:22992422692" target="_blank"><img src="images/logoCell.png" alt="logo telefone" class="iconA"></a>
+        <a href="https://pt-br.facebook.com/recantodooriente/" target="_blank"><img src="images/logoFace.png" alt="logo facebook" class="iconA"></a>
+        <a href="https://api.whatsapp.com/send?phone=5522992422692&text=Oi%2C%20estou%20interessado(a)%20em%20uma%20vaga%20na%20casa%20de%20idosos." target="_blank"><img src="images/logoZap.png" alt="logo whatsapp" class="iconA"></a>
+
+    </div>
+
+    <footer>
+
+        <a href="https://www.google.com/maps/place/Estr.+de+Bonsucesso,+116+-+Bonsucesso/data=!4m5!3m4!1s0x97671a4aacd985:0x1dc35223116526fb!8m2!3d-22.8682243!4d-42.4465924?authuser=0&hl=pt-BR&rclk=1" target="_blank">
+
+            Estrada de Bonsucesso, 116 - Bonsucesso, Saquarema - RJ, 28990-000
+            
+        </a>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3676.222863370673!2d-42.44878108503514!3d-22.868224285031406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x97671a4aacd985%3A0x1dc35223116526fb!2sEstr.%20de%20Bonsucesso%2C%20116%20-%20Bonsucesso%2C%20Saquarema%20-%20RJ%2C%2028990-000!5e0!3m2!1spt-BR!2sbr!4v1649006422841!5m2!1spt-BR!2sbr" width="80%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </footer>
+    
+    <script src="scripts/script.js"></script>
+</body>
+</html>
